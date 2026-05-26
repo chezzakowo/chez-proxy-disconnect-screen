@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/assets/icon.ico">
+  <title>Chez's Stream Proxy Disconnect Screen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <div id="bg"></div>
+  <div id="dim"></div>
+  <div id="vignette"></div>
+  <div id="scanlines"></div>
+
+  <div id="overlay">
+
+    <!-- Signal row -->
+    <div id="signal-row">
+
+      <!-- OBS + avatar badge -->
+      <div class="icon-col">
+        <div class="obs-group">
+          <svg class="obs-svg" viewBox="-.035 -.035 75.07 75.07" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="37.5" cy="37.5" fill="#302e31" r="35.8" stroke="#fff" stroke-width="3.47"/>
+            <path d="m19.3 18.7c1.1-5.31 4.7-10.1 9.54-12.5-.842.855-1.86 1.51-2.64 2.44-3.19 3.44-4.63 8.42-3.75 13 1.11 6.99 7.68 12.7 14.8 12.6 5.52.247 10.9-2.93 13.6-7.72 5.78.196 11.4 3.18 14.7 7.97 1.69 2.5 3.01 5.43 3.1 8.48-1.07-4.05-3.76-7.65-7.43-9.68-3.55-2-7.91-2.51-11.8-1.33-4.88 1.4-8.91 5.39-10.3 10.3-1.18 3.91-.675 8.22 1.18 11.8-2.58 4.47-7.24 7.66-12.3 8.62-3.89.816-7.98.186-11.6-1.45 3.24.945 6.76 1.11 9.98-.035 4.32-1.43 7.89-4.9 9.46-9.18 1.74-4.66 1.08-10.2-1.85-14.2-2.19-3.15-5.64-5.37-9.39-6.16-1.19-.212-2.39-.308-3.59-.418-1.91-3.85-2.61-8.32-1.65-12.5z" fill="#c4c2c4"/>
+          </svg>
+          <img class="avatar-badge" src="https://github.com/chezzakowo.png" alt="avatar">
+        </div>
+        <span class="icon-caption">Luồng Stream của Chez</span>
+      </div>
+
+      <!-- Line: OBS → relay (red) -->
+      <div class="line-segment line-left">
+        <div class="line-badge line-badge--red">✕</div>
+      </div>
+
+      <!-- Relay / robot -->
+      <div class="icon-col">
+        <div class="relay-wrap">
+          <svg class="relay-svg" viewBox="0 0 100 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="4" width="84" height="22" rx="5" fill="white"/>
+            <circle cx="22" cy="15" r="3.5" fill="#302e31"/>
+            <circle cx="34" cy="15" r="3.5" fill="#302e31"/>
+            <line x1="44" y1="11" x2="82" y2="11" stroke="#302e31" stroke-width="3" stroke-linecap="round"/>
+            <line x1="44" y1="19" x2="72" y2="19" stroke="#302e31" stroke-width="3" stroke-linecap="round"/>
+            <rect x="8" y="30" width="84" height="26" rx="5" fill="white"/>
+            <circle cx="50" cy="43" r="5" fill="#302e31"/>
+            <path class="arc" d="M37 43 a13 13 0 0 1 26 0" stroke="#302e31" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path class="arc arc2" d="M29 43 a21 21 0 0 1 42 0" stroke="#302e31" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <line x1="30" y1="56" x2="30" y2="80" stroke="white" stroke-width="7" stroke-linecap="round"/>
+            <line x1="50" y1="56" x2="50" y2="80" stroke="white" stroke-width="7" stroke-linecap="round"/>
+            <line x1="70" y1="56" x2="70" y2="80" stroke="white" stroke-width="7" stroke-linecap="round"/>
+            <line x1="16" y1="80" x2="44" y2="80" stroke="white" stroke-width="6" stroke-linecap="round"/>
+            <line x1="36" y1="80" x2="64" y2="80" stroke="white" stroke-width="6" stroke-linecap="round"/>
+            <line x1="56" y1="80" x2="84" y2="80" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="icon-caption">Stream Proxy</span>
+      </div>
+
+      <!-- Line: relay → platform (green) -->
+      <div class="line-segment line-right"></div>
+
+      <!-- Platform icon -->
+      <div class="icon-col">
+        <div class="platform-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="18" x2="18" y2="0" stroke="#ddd" stroke-width="5"/>
+            <line x1="0" y1="30" x2="30" y2="0" stroke="#ddd" stroke-width="5"/>
+            <polygon points="21,20 21,46 46,33" fill="#1a1a1a"/>
+          </svg>
+        </div>
+        <span class="icon-caption">Nền tảng Stream</span>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div id="bottom-bar">
+      <div id="left-info">
+        <div id="clock">00:00:00</div>
+        <div id="disconnect-label">// Đang mất tín hiệu, vui lòng chờ tí nhe</div>
+      </div>
+      <div id="bg-credit">
+        <span class="label">Background by </span><span class="author" id="credit-name">—</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
